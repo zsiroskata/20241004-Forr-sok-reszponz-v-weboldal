@@ -1,11 +1,13 @@
-const SITE = document.querySelector('.site');
+const MENU = document.querySelector('.main-nav');
 const TRIGGER = document.querySelector('.trigger');
-console.log(TRIGGER);
 
-function revealMenu() {
-    SITE.classList.toggle('reveal');
-   TRIGGER.innerHTML == 'Close menu' ? TRIGGER.innerHTML = 'Open menu' : TRIGGER.innerHTML = 'Close menu';
+function toggleMenu() {
+    MENU.classList.toggle('reveal'); 
+    if (MENU.classList.contains('reveal')) {
+        TRIGGER.textContent = 'Close menu';
+    } else {
+        TRIGGER.textContent = 'Open menu'; 
+    }
 }
 
-TRIGGER.addEventListener('click', revealMenu, false);
-
+TRIGGER.addEventListener('click', toggleMenu);
